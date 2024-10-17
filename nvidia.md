@@ -6,7 +6,7 @@ layout: default
 # Installing NVIDIA drivers
 
 Prerequisites:\
-RPMFusion (link)\
+[Enabling RPMFusion](/rpmfusion)\
 [Enrolling a signing key for Secure Boot](/nvidia_secboot)
 
 {: .important }
@@ -21,9 +21,6 @@ If Secure Boot is enabled, you must follow the steps [here](/nvidia_secboot) bef
 
 ## Modern NVIDIA:
 First, update your system, `sudo dnf up`, and reboot.
-
-{: .warning }
-Secure Boot users, see (signing nvidia kernel driver link)
 
 Install the NVIDIA drivers and CUDA/NV(ENC/DEC) support.
 
@@ -40,8 +37,6 @@ Reboot your system, and check that is it installed. That is, `modinfo -F version
 <summary>NVIDIA 470.xx Legacy Drivers</summary>
 First, update your system, `sudo dnf up`, and reboot.
 
-{: .warning }
-Secure Boot users, see (signing nvidia kernel driver link)
 Install the NVIDIA drivers and CUDA (11.4) support.
 ```
 sudo dnf in akmod-nvidia-470xx xorg-x11-drv-nvidia-470xx xorg-x11-drv-nvidia-470xx-cuda
@@ -58,9 +53,6 @@ Reboot your system, and check that is it installed. That is, `modinfo -F version
 This driver is end-of-life. It may break at any time.
 
 First, update your system, `sudo dnf up`, and reboot.
-
-{: .warning }
-Secure Boot users, see (signing nvidia kernel driver link)
 
 Install the NVIDIA drivers and CUDA (9.2) support.
 ```
@@ -103,9 +95,6 @@ Follow the rest of the instructions like normal.
 This driver is EOL. It may break at any time, and likely won't work on newer Fedora versions. You may attempt the drivers below, but also note the 3rd party patch section.
 
 First, update your system, `sudo dnf up`, and reboot.
-
-{: .warning }
-Secure Boot users, see (signing nvidia kernel driver link)
 
 Install the NVIDIA drivers and CUDA (6.5) support.
 ```

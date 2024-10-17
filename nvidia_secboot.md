@@ -4,6 +4,9 @@ layout: default
 ---
 # Self-signing the NVIDIA driver
 
+Prerequisites:\
+[Enabling RPMFusion](/rpmfusion)
+
 {: .important }
 This is required if you wish to use Secure Boot.
 
