@@ -37,6 +37,9 @@ Exec=LD_PRELOAD=/usr/lib64/libglib-2.0.so.0:/usr/lib64/libgio-2.0.so.0:/usr/lib6
 1. Finally, open the program.
 
 {: .important }
-Make sure you have an OpenCL or CUDA backend installed. 
+Make sure you have an OpenCL or CUDA backend installed.
+
+{: .note }
+By default, Resolve overrides the system's window decorations (Resolve for Linux was meant to be used on dedicated rendering machines). You may re-enable them with [this KWin rule](/davinci_rules.kwinrule). You can install this by opening System Settings, and going to Window Management > Window Rules > Import and then selecting the file. Click Apply to save.
 
 [^forum]: Solution provided by [this user on the Blackmagic forum](https://forum.blackmagicdesign.com/viewtopic.php?f=21&t=199682). Much love.

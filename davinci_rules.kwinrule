@@ -1,0 +1,16 @@
+[!Exclude decorations on DaVinci Resolve splash window]
+Description=!Exclude decorations on DaVinci Resolve splash window
+noborder=true
+noborderrule=2
+title=resolve
+titlematch=1
+types=32
+wmclass=resolve
+wmclassmatch=2
+
+[Show decorations on DaVinci Resolve main window]
+Description=Show decorations on DaVinci Resolve main window
+noborderrule=2
+types=33
+wmclass=resolve
+wmclassmatch=1
