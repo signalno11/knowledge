@@ -1,89 +1,117 @@
 * {
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 code {
-    font-family: "Roboto Mono", monospace;
+  font-family: "Roboto Mono", monospace;
 }
 
+// Imported from Google Fonts
 .roboto-black-italic {
-    font-family: "Roboto", sans-serif;
-    font-weight: 900;
-    font-style: italic;
-  }
-  
-  .roboto-black {
-    font-family: "Roboto", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-  }
-  
-  .roboto-bold-italic {
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-    font-style: italic;
-  }
-  
-  .roboto-bold {
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
-  .roboto-medium-italic {
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-style: italic;
-  }
-  
-  .roboto-medium {
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  .roboto-regular-italic {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-  }
-  
-  .roboto-regular {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .roboto-light-italic {
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    font-style: italic;
-  }
-  
-  .roboto-light {
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-  }
-  
-  .roboto-thin-italic {
-    font-family: "Roboto", sans-serif;
-    font-weight: 100;
-    font-style: italic;
-  }
-  
-  .roboto-thin {
-    font-family: "Roboto", sans-serif;
-    font-weight: 100;
-    font-style: normal;
-  }
-  
-  // <uniquifier>: Use a unique and descriptive class name
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+// <uniquifier>: Use a unique and descriptive class name
 // <weight>: Use a value from 100 to 700
 
 .roboto-mono-regular {
-    font-family: "Roboto Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+// End Google Fonts import
+
+// From https://dylanatsmith.com/wrote/styling-the-kbd-element and modified for theming. I removed the comments because you can just read them on his blog post, and a lot of them were relating to code I changed.
+kbd {
+  background-color: #898b90;
+  color: #222325;
+  border-radius: 0.25rem;
+  border: 1px solid #3d3e42;
+  box-shadow: 0 2px 0 1px #3d3e42;
+  cursor: default;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.75em;
+  line-height: 1;
+  min-width: 0.75rem;
+  display: inline-block;
+  text-align: center;
+  padding: 2px 5px;
+  position: relative;
+  top: -1px;
+  &:hover {
+    box-shadow: 0 1px 0 0.5px #3d3e42;
+    top: 1px;
   }
+}
+
+// End
