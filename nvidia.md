@@ -17,7 +17,7 @@ Check if your GPU is considered legacy. Find your GPU on [this page](https://www
 > ```
 mokutil --sb-state
 ```
-If Secure Boot is enabled, you must follow the steps [here](/nvidia_secboot) before proceeeding.
+If Secure Boot is enabled, you must follow the steps [here](/nvidia_secboot) before proceeding.
 
 ## Modern NVIDIA:
 First, update your system, `sudo dnf up`, and reboot.
@@ -77,7 +77,7 @@ Reboot your system, and check that is it installed. That is, `modinfo -F version
 <details markdown=1>
 <summary>Optional: 3rd Party Patch</summary>
 The goal of this driver is to increase compatibility with newer Linux kernel versions. It is recommended for more recent versions of Fedora (Linux ~6).
-I cannot verify if this patch is required, because I do not have a compatibile device to test it with. 
+I cannot verify if this patch is required, because I do not have a compatible device to test it with. 
 
 {: .note }
 As far as I can tell, this patch is intended to be used with the LTS kernel.
