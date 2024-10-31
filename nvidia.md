@@ -22,6 +22,13 @@ If Secure Boot is enabled, you must follow the steps [here](/nvidia_secboot) bef
 ## Modern NVIDIA:
 First, update your system, `sudo dnf up`, and reboot.
 
+{: .important }
+> On Turing (GTX 16/20) and later, NVIDIA now recommends you use the open source drivers. If this is you, enable the open source drivers by running
+> ```
+sudo sh -c 'echo "%_with_kmod_nvidia_open 1" > /etc/rpm/macros.nvidia-kmod'
+```
+> and then continue with the instructions below.
+
 Install the NVIDIA drivers and CUDA/NV(ENC/DEC) support.
 
 ```
