@@ -16,7 +16,7 @@ sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-releas
 ```
 1. Explicitly enable the OpenH264 repository
 ```
-sudo dnf config-manager --enable fedora-cisco-openh264
+sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
 ```
 1. Install the required package to verify the keys
 ```
