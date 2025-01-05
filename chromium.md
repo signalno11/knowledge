@@ -5,7 +5,7 @@ parent: Media and Acceleration
 ---
 # Configuring Chromium
 Prerequisites:\
-[Hardware acceleration](/media)
+[Hardware acceleration]({% link media.md %})
 
 {: .note }
 Fedora KDE uses Wayland by default.

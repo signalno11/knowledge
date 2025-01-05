@@ -5,7 +5,7 @@ parent: Media and Acceleration
 ---
 # Configuring Firefox
 Prerequisites:\
-[Hardware acceleration](/media)
+[Hardware acceleration]({% link media.md %})
 
 {: .note }
 Fedora KDE uses Wayland by default.
@@ -29,12 +29,12 @@ Fedora KDE uses Wayland by default.
 On non Intel GPUs, you may need to set `media.ffmpeg.vaapi.enabled` for hardware decoding.
 
 {: .important }
-If hardware decoding is disabled with error `FEATURE_HARDWARE_VIDEO_DECODING_DISABLE` or `FEATURE_FAILURE_VIDEO_DECODING_TEST_FAILED`, make sure you've followed [the hardware acceleration setup guide](/media), and set `media.hardware-video-decoding.force-enabled` to true.
+If hardware decoding is disabled with error `FEATURE_HARDWARE_VIDEO_DECODING_DISABLE` or `FEATURE_FAILURE_VIDEO_DECODING_TEST_FAILED`, make sure you've followed [the hardware acceleration setup guide]({% link media.md %}), and set `media.hardware-video-decoding.force-enabled` to true.
 
 1. Play a video in Firefox.
 2. Go to `about:support`
 3. Make sure hardware decoding is supported under "Codec Support Information"
-![Screenshot of Codec Support Information entry](/codec.png)
+![Screenshot of Codec Support Information entry](codec.png)
 
 {: .important }
 It is normal for Firefox to not support HEVC. Hardware decoding should be supported for H.264, as well as AV1 and HEVC on some GPUs. Audio codecs (AAC, Opus, FLAC, etc) usually do not have hardware decoding support. 

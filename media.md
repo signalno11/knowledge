@@ -4,11 +4,11 @@ layout: default
 ---
 # Media codecs and hardware acceleration
 Prerequisites:\
-[RPMFusion](/rpmfusion)
+[RPMFusion]({% link rpmfusion.md %})
 ## Multimedia codecs
 
 {: .note }
-Fedora ships a version of FFmpeg with support for only free codecs, and allows a package complement that supplies the nonfree codecs. However, according to RPMFusion[^ffmpeg], sometimes you can run into issues when these packages have version missmatches, and they recommend switching to their standard build of FFmpeg.
+Fedora ships a version of FFmpeg with support for only free codecs, and allows a package complement that supplies the nonfree codecs. However, according to RPMFusion[^ffmpeg], sometimes you can run into issues when these packages have version mismatches, and they recommend switching to their standard build of FFmpeg.
 
 1. Install full version of FFmpeg
 ```
@@ -114,9 +114,9 @@ To install:
 ```
 sudo dnf in rpmfusion-free-release-tainted && sudo dnf in libdvdcss
 ```
-### References:
-https://rpmfusion.org/Howto/Multimedia
-https://wiki.archlinux.org/title/Hardware_video_acceleration
+### References:\
+[RPMFusion - Multimedia How-to](https://rpmfusion.org/Howto/Multimedia)\
+[ArchWiki - Hardware video acceleration](https://wiki.archlinux.org/title/Hardware_video_acceleration)
 
 [^ffmpeg]: See [here](https://rpmfusion.org/Howto/Multimedia).
 [^vlclegal]: See [here](https://www.videolan.org/legal.html).

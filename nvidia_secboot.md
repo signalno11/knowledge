@@ -5,7 +5,7 @@ layout: default
 # Self-signing the NVIDIA driver
 
 Prerequisites:\
-[Enabling RPMFusion](/rpmfusion)
+[Enabling RPMFusion]({% link rpmfusion.md %})
 
 {: .important }
 This is required if you wish to use Secure Boot.
@@ -38,6 +38,6 @@ The keyboard is always QWERTY in this menu. If your keyboard is not QWERTY, you 
 
 [^kmodgenca]: I beleive this is a macro for openssl -- advanced users looking to *distribute* drivers should read the full Fedora [documentation about signing kmods](https://docs.fedoraproject.org/en-US/fedora/latest/system-administrators-guide/kernel-module-driver-configuration/Working_with_Kernel_Modules/#sect-signing-kernel-modules-for-secure-boot).
 
-References:
-https://rpmfusion.org/Howto/NVIDIA
-https://rpmfusion.org/Howto/Secure%20Boot
+References:\
+[RPMFusion - NVIDIA How-to](https://rpmfusion.org/Howto/NVIDIA)\
+[RPMFusion - Secure Boot How-to](https://rpmfusion.org/Howto/Secure%20Boot)

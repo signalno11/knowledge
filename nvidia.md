@@ -7,7 +7,7 @@ layout: default
 
 Prerequisites:\
 [Enabling RPMFusion]({% link rpmfusion.md %})\
-[Enrolling a signing key for Secure Boot](/nvidia_secboot)
+[Enrolling a signing key for Secure Boot]({% link nvidia_secboot.md %})
 
 {: .important }
 Check if your GPU is considered legacy. Find your GPU on [this page](https://www.nvidia.com/en-us/drivers/unix/legacy-gpu/), and if it is listed, follow the instructions for the driver series it is listed under (i.e 470.xx). Otherwise, continue with the modern drivers below.
@@ -17,7 +17,7 @@ Check if your GPU is considered legacy. Find your GPU on [this page](https://www
 > ```
 mokutil --sb-state
 ```
-If Secure Boot is enabled, you must follow the steps [here](/nvidia_secboot) before proceeding.
+If Secure Boot is enabled, you must follow the steps [here]({% link nvidia_secboot.md %}) before proceeding.
 
 ## Modern NVIDIA:
 First, update your system, `sudo dnf up`, and reboot.
@@ -125,6 +125,6 @@ sudo dnf mark install akmod-nvidia
 {: important }
 Any older NVIDIA devices are no longer supported on Fedora.
 
-References:
-https://rpmfusion.org/Howto/NVIDIA
-https://docs.fedoraproject.org/en-US/fedora/latest/system-administrators-guide/kernel-module-driver-configuration/Working_with_Kernel_Modules/
+References:\
+[RPMFusion - NVIDIA How-to](https://rpmfusion.org/Howto/NVIDIA)\
+[Fedora Docs - Working with Kernel Modules](https://docs.fedoraproject.org/en-US/fedora/latest/system-administrators-guide/kernel-module-driver-configuration/Working_with_Kernel_Modules/)

@@ -16,4 +16,4 @@ sudo dnf copr enable atim/heroic-games-launcher
 sudo dnf in heroic-games-launcher-bin
 ```
 # Flatpak
-Note to myself: Check if this is included in default Fedora Flatpaks repo or if Flathub instructions are needed
+Add flathub instructions eventually.

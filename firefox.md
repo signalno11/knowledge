@@ -11,4 +11,4 @@ sudo dnf in firefox
 
 ### WIP settings to change
 
-Also see [enabling acceleration on Firefox](/acc_firefox)
+Also see [enabling acceleration on Firefox]({% link acc_firefox.md %})
