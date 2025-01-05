@@ -1,6 +1,8 @@
 ---
 title: NVIDIA Setup
 layout: default
+parent: Post-install tasks
+nav_order: 2
 ---
 
 # Installing NVIDIA drivers

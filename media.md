@@ -1,6 +1,7 @@
 ---
 title: Media and Acceleration
 layout: default
+parent: Post-install tasks
 ---
 # Media codecs and hardware acceleration
 Prerequisites:\

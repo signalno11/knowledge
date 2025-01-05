@@ -1,6 +1,7 @@
 ---
 title: Self-signing the NVIDIA driver
 layout: default
+parent: NVIDIA Setup
 ---
 # Self-signing the NVIDIA driver
 

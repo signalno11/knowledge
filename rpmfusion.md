@@ -1,6 +1,8 @@
 ---
 title: RPMFusion repository
 layout: default
+parent: Post-install tasks
+nav_order: 1
 ---
 # Enabling the RPMFusion repository
 RPMFusion is a community repository that ships packages that Fedora doesn't want to (i.e. nonfree software or free software that doesn't meet their [licensing guidelines](https://docs.fedoraproject.org/en-US/legal/license-approval/)) or can't ship (i.e. software that does not explicitly allow redistribution).

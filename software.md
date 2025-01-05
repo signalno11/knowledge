@@ -1,6 +1,7 @@
 ---
 title: Installing Common Software
 layout: default
+nav_order: 4
 ---
 # Installing Common Software
 
