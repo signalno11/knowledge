@@ -10,7 +10,7 @@ This guide was made for Nuke non-commercial, but should work for all versions of
 1. Once logged in to your Foundry account, download the Linux version of Nuke.
 1. Accept the EULA, and download the .tgz file into a folder, i.e. Documents, /opt/, etc.
 1. Extract the .tgz file (Right Click > Extract > Extract here and delete archive).
-1. Run the .run file extracted.
+1. Run the .run file extracted (Right click > Open in Konsole).
 1. Scroll through the EULA, and then type `y` to approve it.
 1. Say `y` to approve the subdirectory.
 1. Open Menu Editor
