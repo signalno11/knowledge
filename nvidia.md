@@ -6,7 +6,7 @@ layout: default
 # Installing NVIDIA drivers
 
 Prerequisites:\
-[Enabling RPMFusion](../rpmfusion)\
+[Enabling RPMFusion]({% link rpmfusion.md %})\
 [Enrolling a signing key for Secure Boot](/nvidia_secboot)
 
 {: .important }
