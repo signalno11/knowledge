@@ -23,10 +23,10 @@ As far as 4x4 devices go, the *DL-WRX36* and E8450 are both great. The *DL-WRX36
 For 2x2 160ch devices, we have the **GL-MT3000**, TR3000, and WR3000. They pretty much all have the same specs.
 
 ### $100-150
-The only Wifi 6E option on this list, the <u>*Predador Connect W6 (!)*</u> is available used on Amazon in this price range. If you don't want to buy used, the **GL-MT6000** is a good option. It doesn't support 6E, but its 2.4GHz channel is better than the W6's.
+The only Wifi 6E option on this list, the <u><i>Predador Connect W6 (!)</i></u> is available used on Amazon in this price range. If you don't want to buy used, the **GL-MT6000** is a good option. It doesn't support 6E, but its 2.4GHz channel is better than the W6's.
 
 ### $200+
-Get the <u>*Predator Connect W6 (!)*</u>.
+Get the <u><i>Predator Connect W6 (!)</i></u>.
 
 ## Glossery
 MIMO: Multi-in, multi-out - increases speed, but this is a standard feature these days
