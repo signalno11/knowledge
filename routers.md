@@ -1,3 +1,7 @@
+---
+title: OpenWrt routers
+layout: default
+---
 # United States OpenWrt router recommendations
 
 ## What is OpenWrt?
