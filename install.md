@@ -9,6 +9,7 @@ nav_order: 2
 ## Creating a bootable USB drive.
 
 1. (Windows) Disable AutoPlay in Settings > Bluetooth & devices > AutoPlay.
+1. (Windows) In an Admin command prompt, run `diskpart automount disable`.
 1. Download [Fedora Media Writer](https://github.com/FedoraQt/MediaWriter/releases/latest) and install it.
 1. Open Fedora Media Writer.
 1. Select "Download automatically" and click Next.
