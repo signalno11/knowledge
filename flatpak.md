@@ -17,4 +17,4 @@ flatpak remote-delete fedora
 ```
 
 ##### References:
-[Flathub Setup]([https://rpmfusion.org/Configuration](https://flathub.org/setup/Fedora)
+[Flathub Setup](https://flathub.org/setup/Fedora)
