@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## Written by Moon (@signalno11)
-## Version 0.1 WIP
+## Version 0.2
 ## SOURCES
 # ArchWiki contributors. “Hardware Video Acceleration.” ArchWiki. Last modified May 7, 2025.
 #         https://wiki.archlinux.org/title/Hardware_video_acceleration.
@@ -28,8 +28,8 @@
 #         https://www.techpowerup.com/gpu-specs/.
 # ———, ed. “Intel GMA X4500 Specs.” Accessed May 18, 2025.
 #         https://www.techpowerup.com/gpu-specs/gma-x4500.c3116.
-# The PCI ID Repository contributors. “Vendor 10de (NVIDIA Corporation).” The PCI ID
-#         Respository. Accessed May 18, 2025. https://admin.pci-ids.ucw.cz/read/PC/10de.
+# The PCI ID Repository contributors. “The PCI ID Repository” The PCI ID
+#         Respository. Accessed May 18, 2025. https://admin.pci-ids.ucw.cz/.
 # Torvalds, Linus [torvalds]. “Linux/Arch/X86/Include/Asm/intel-family.h at Master ·
 #         Torvalds/Linux.” GitHub. Accessed May 18, 2025.
 #         https://github.com/torvalds/linux/blob/master/arch/x86/include/asm/intel-family.h.
@@ -44,6 +44,9 @@
 # ———. “List of Intel Processors.” Wikipedia. Last modified May 14, 2025.
 #         https://en.wikipedia.org/wiki/List_of_Intel_processors.
 
+
+# https://en.wikipedia.org/wiki/TeraScale_(microarchitecture)
+# https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units
 
 check_if_root()
 {
@@ -88,8 +91,16 @@ check_gpu_vendor()
 
 check_amd_gpu()
 {
-    printf "Fedora only supports mainline Mesa, no support for Amber is included. This means your GPU must be GCN 1.0 or later. TeraScale users will need to look toward a different distro\n"
-    sleep 1;
+    case $(lspci -md ::0300 | awk -F'"' '{print $6}') in
+        # R200
+        R200* | RV250* | RV280* | RS300* | RS350* | RC350*) ;&
+        # R100
+        RV100* | R100* | RV200* | RS100* | RS200*)
+            read -rp "Your GPU requires Mesa Amber, which Fedora does not support. In order for your GPU to work, you'll need to switch to another distro. Would you like to continue with software rendering anyway? (y/n) " amd_amber_yn; if [[ "${amd_amber_yn,,}" = 'y'* ]]; then gpu=skip; else exit 1; fi
+            ;;
+        # Pre-Radeon cards
+        Mach64* | "Rage 2*" | "Rage 3*" | "Rage 4*" | "*Rage*") ;&
+        read -rp "Pre-radeon cards are not supported. Would you like continue with software rendering anyway? (y/n) " amd_unsup_yn; if [[ "${amd_amber_yn,,}" = 'y'* ]]; then gpu=skip; else exit 1; fi
 }
 
 check_nvidia_gpu()
@@ -101,30 +112,30 @@ check_nvidia_gpu()
     case $(lspci -md ::0300 | awk -F'"' '{print $6}') in
         ## NVIDIA Open supported (Turing and later)
         # Turing
-        *TU102* | *TU104* | *TU106* | *TU116* | *TU117*) ;&
+        *TU[0-9][0-9][0-9]*) ;&
         # Ampere
-        *GA100* | *GA10B* | *GA102* | *GA103* | *GA104* | *GA106* | *GA107*) ;&
+        *GA[0-9][0-9][0-9]*) ;&
         # Ada Lovelace
-        *AD102* | *AD103* | *AD104* | *AD106* | *AD107*) ;&
+        *AD[0-9][0-9][0-9]*) ;&
         # Blackwell / 2.0
-        *GB100* | *GB102* | *GB202* | *GB203* | *GB205* | *GB206* | *GB207*)
+        *GB[0-9][0-9][0-9]*)
             nvidia=open
             ;;
         ## NVIDIA Supported (Maxwell and later) [Turing and later is not targeted, this script will install NVIDIA Open instead]
         # Maxwell
-        *GM107* | *GM108* | *GM200* | *GM204* | *GM206* | *GM20B*) ;&
+        *GM[0-9][0-9][0-9]*) ;&
         # Pascal
-        *GP100* | *GP102* | *GP104* | *GP106* | *GP107* | *GP108* | *GP10B*) ;&
+        *GP[0-9][0-9][0-9]*) ;&
         # Volta
-        *GV100* | *GV10B*)
+        *GV[0-9][0-9][0-9]*)
             nvidia=current
             ;;
         ## NVIDIA Legacy 470 (Kepler)
-        *GK104* | *GK106* | *GK107* | *GK110* | *GK180* | *GK208* | *GK20A* | *GK210*)
+        *GK[0-9][0-9][0-9]*)
             nvidia=470
             ;;
         ## NVIDIA Legacy 390 (Fermi)
-        *EXMF104* | *GF100* | *GF104* | *GF106* | *GF108* | *GF110* | *GF114* | *GF116* | *GF117* | *GF119*)
+        *EXMF104* | *GF[0-9][0-9][0-9]*)
             nvidia=390
             ;;
         ## NVIDIA Legacy 340 (Tesla)
@@ -132,7 +143,7 @@ check_nvidia_gpu()
             nvidia=340
             ;;
         *)
-            nvidia=unsupported
+            read -rp "Either your GPU is newer than RTX 5000 series, or it is very old. If it is newer than RTX 5000, type y. Otherwise, type n." nvidia_unknown_input; if [[ "${nvidia_unknown_input,,}" = 'y'* ]]; then nvidia=open; else nvidia=unsupported; fi
             ;;
     esac
 }
