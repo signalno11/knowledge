@@ -60,7 +60,7 @@ run_update()
 {
     printf "Checking for updates...\n"
     dnf up -y
-    if dnf needs-restarting; then
+    if ! dnf needs-restarting; then
         printf "Rebooting in 10 seconds for updates...RUN THIS SCRIPT AGAIN WHEN YOU LOG BACK IN!"
         sleep 10
         reboot
@@ -83,8 +83,8 @@ check_gpu_vendor()
             check_nvidia_gpu
             ;;
         *)
-            prinf "Unknown GPU\n"
-            exit 1
+            printf "Unknown GPU, skipping drivers...\n"
+            gpu=skip
             ;;
     esac
 }
