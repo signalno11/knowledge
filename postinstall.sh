@@ -355,7 +355,7 @@ install_nvidia_driver()
 
 check_multi_gpu()
 {
-    if [ "$(lspci -nmd ::0300 | awk '{ gsub(/"/, "", $3); print $3 }' | wc -l)" = 1 ]; then
+    if [ "$(lspci -nmd ::0300 | awk '{ gsub(/"/, "", $3); print $3 }' | wc -l)" != 1 ]; then
         printf "Currently, this script doesn't support multi-GPU systems. Ask an advisor what to do.\n"
         exit 1
     fi
