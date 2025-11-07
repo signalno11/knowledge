@@ -69,7 +69,7 @@ run_update()
 
 check_gpu_vendor()
 {
-    case (lspci -nmd ::0300 | awk '{ gsub(/"/, "", $3); print $3 }' ) in
+    case $(lspci -nmd ::0300 | awk '{ gsub(/"/, "", $3); print $3 }' ) in
         1002)
             gpu=amd
             check_amd_gpu
@@ -91,7 +91,7 @@ check_gpu_vendor()
 
 check_amd_gpu()
 {
-    case (lspci -md ::0300 | awk -F'"' '{print $6}') in
+    case $(lspci -md ::0300 | awk -F'"' '{print $6}') in
         # R200
         R200* | RV250* | RV280* | RS300* | RS350* | RC350*) ;&
         # R100
@@ -107,11 +107,11 @@ check_amd_gpu()
 
 check_nvidia_gpu()
 {
-    if [[ (mokutil --sb-state) = *enabled* ]]; then
+    if [[ $(mokutil --sb-state) = *enabled* ]]; then
         printf "You have secure boot enabled. Because you have a NVIDIA card, you must either disable secure boot, or self-sign the NVIDIA driver. https://signalno11.github.io/knowledge/nvidia_secboot.html.\n"
         exit 1
     fi
-    case (lspci -md ::0300 | awk -F'"' '{print $6}') in
+    case $(lspci -md ::0300 | awk -F'"' '{print $6}') in
         ## NVIDIA Open supported (Turing and later)
         # Turing
         *TU[0-9][0-9][0-9]*) ;&
@@ -152,9 +152,9 @@ check_nvidia_gpu()
 
 check_intel_igp()
 {
-    case (awk '$1 == "cpu" && $2 == "family" && $3 == ":" {print $4; exit}' /proc/cpuinfo) in
+    case $(awk '$1 == "cpu" && $2 == "family" && $3 == ":" {print $4; exit}' /proc/cpuinfo) in
             6)
-        case (awk '$1 == "model" && $2 == ":" {print $3; exit}' /proc/cpuinfo) in
+        case $(awk '$1 == "model" && $2 == ":" {print $3; exit}' /proc/cpuinfo) in
             ### Case: Legacy Intel driver
             ## Desktop CPUs
             # Haswell
@@ -235,7 +235,7 @@ check_intel_igp()
 check_intel_gpu()
 {
     # Check if dedicated
-    case (lspci -md ::0300 | awk -F'"' '{print $6}') in
+    case $(lspci -md ::0300 | awk -F'"' '{print $6}') in
         # Intel Arc & Xe
         *DG2* | *G21* | *DG1*) ;&
         # Intel Datacenter
@@ -355,7 +355,7 @@ install_nvidia_driver()
 
 check_multi_gpu()
 {
-    if [ (lspci -nmd ::0300 | awk '{ gsub(/"/, "", $3); print $3 }' | wc -l) != 1 ]; then
+    if [ "$(lspci -nmd ::0300 | awk '{ gsub(/"/, "", $3); print $3 }' | wc -l)" != 1 ]; then
         printf "Currently, this script doesn't support multi-GPU systems. Ask an advisor what to do.\n"
         exit 1
     fi
