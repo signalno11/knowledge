@@ -99,8 +99,10 @@ check_amd_gpu()
             read -rp "Your GPU requires Mesa Amber, which Fedora does not support. In order for your GPU to work, you'll need to switch to another distro. Would you like to continue with software rendering anyway? (y/n) " amd_amber_yn; if [[ "${amd_amber_yn,,}" = 'y'* ]]; then gpu=skip; else exit 1; fi
             ;;
         # Pre-Radeon cards
-        Mach64* | "Rage 2*" | "Rage 3*" | "Rage 4*" | "*Rage*") ;&
-        read -rp "Pre-radeon cards are not supported. Would you like continue with software rendering anyway? (y/n) " amd_unsup_yn; if [[ "${amd_amber_yn,,}" = 'y'* ]]; then gpu=skip; else exit 1; fi
+        Mach64* | "Rage 2*" | "Rage 3*" | "Rage 4*" | "*Rage*")
+        read -rp "Pre-radeon cards are not supported. Would you like continue with software rendering anyway? (y/n) " amd_unsup_yn; if [[ "${amd_unsup_yn,,}" = 'y'* ]]; then gpu=skip; else exit 1; fi
+        ;;
+    esac
 }
 
 check_nvidia_gpu()
