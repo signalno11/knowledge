@@ -11,7 +11,7 @@ Some of these functions are built into the default clipboard manager on KDE Plas
 ##### Always on Top
 This functionality is built into KDE Plasma. Simply right click the window's title bar (if the window doesn't have a title bar, you may press <kbd>Alt</kbd>+<kbd>F3</kbd> to invoke the same menu) and select More Actions > Keep Above Others. You can also set a shortcut to do this in the shortcut settings.
 ##### Awake
-Obviously you may simply disable power management (which is much easier on Plasma than it is on Windows), but if you want all the functionality, use (this is a future Moon endeavour)
+In the Battery/Power applet in the system tray, you can manually inhibit sleep. It should also be possible to assign a shortcut.
 ##### Color Picker
 Add the color picker widget to your dock or desktop, or use KColorChooser if you rather an application.
 ##### Command Not Found
@@ -27,7 +27,7 @@ These features are built into KDE Plasma's file manager, Dolphin.
 ##### File Locksmith
 File locking shouldn't really happen apart from specific circumstances on Linux, but you may always just delete the lock (although this can lead to issues, especially if you're messing with your package manager for example).
 ##### Hosts File Editor
-Simply edit `/etc/hosts`. You may use `xdg-open` on Plasma, assuming your default editor is Kate or KWrite, as they support Polkit.
+Simply edit `/etc/hosts`. You may use `xdg-open` on Plasma, assuming your default editor is Kate or KWrite, as they support Polkit, so sudo is not needed.
 ##### Image Resizer
 Use ReImage, a Dolphin service. Moon: Remember to try https://store.kde.org/p/2145001/ and https://github.com/irfanhakim-as/kde-service-menu-reimage
 ##### Keyboard Manager
