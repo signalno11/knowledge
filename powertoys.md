@@ -57,11 +57,6 @@ Use KRuler.
 ##### Shortcut Guide
 Wayland's design probably makes this impossible unless KDE wants to add it to their compositor. Sorry.
 ##### Text Extractor
-Note to moon: try the following and then update recommendations here
-https://flathub.org/apps/com.github.tenderowl.frog
-https://github.com/zendalona/lios
-https://danpla.github.io/dpscreenocr/en/
-https://github.com/dynobo/normcap
-https://github.com/RajSolai/TextSnatcher
+This is built into Spectacle, the default screenshot tool on KDE. Simply take a screenshot, and select "Extract Text." 
 ##### Video Conference Mute
 Note to moon: explore shortcuts menu to see if this is possible
