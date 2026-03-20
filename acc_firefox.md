@@ -37,4 +37,4 @@ If hardware decoding is disabled with error `FEATURE_HARDWARE_VIDEO_DECODING_DIS
 ![Screenshot of Codec Support Information entry](codec.png)
 
 {: .important }
-It is normal for Firefox to not support HEVC. Hardware decoding should be supported for H.264, as well as AV1 and HEVC on some GPUs. Audio codecs (AAC, Opus, FLAC, etc) usually do not have hardware decoding support. 
+As of Firefox 137, Firefox should finally now support HEVC video. However, I haven't had time to test it yet. Unlike the photo above, though, you should now see HEVC: Supported.
