@@ -28,6 +28,9 @@ Fedora KDE uses Wayland by default.
 {: .important }
 On non Intel GPUs, you may need to set `media.ffmpeg.vaapi.enabled` for hardware decoding.
 
+{: .important}
+The VAAPI wrapper from the previous page is required on NVIDIA hardware.
+
 {: .important }
 If hardware decoding is disabled with error `FEATURE_HARDWARE_VIDEO_DECODING_DISABLE` or `FEATURE_FAILURE_VIDEO_DECODING_TEST_FAILED`, make sure you've followed [the hardware acceleration setup guide]({% link media.md %}), and set `media.hardware-video-decoding.force-enabled` to true.
 
