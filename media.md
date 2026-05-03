@@ -69,19 +69,10 @@ sudo dnf in libvdpau-va-gl
 {: .note }
 VAAPI is supported on Radeon R600 and later. VDPAU is supported on Radeon HD 2000 and later.
 
-The default VAAPI and VDPAU drivers installed do not support proprietary codecs. To add support, run the following commands
-
-VAAPI:
+The default VAAPI and VDPAU drivers installed do not support proprietary codecs. To add support, run the following command
 ```
-sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
-sudo dnf swap mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686
+sudo dnf install mesa-va-drivers-freeworld mesa-va-drivers-freeworld.i686 
 ```
-VDPAU:
-```
-sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
-sudo dnf swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686
-```
-
 {: .note }
 To use AMF, you need to use the AMDGPU PRO stack. This is not recommended for most users.
 </details>
