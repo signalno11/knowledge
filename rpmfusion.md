@@ -14,28 +14,9 @@ While RPMFusion is generally recognized as a safe source for packages, it is sti
 
 1. Enable RPMFusion Free and RPMFusion Nonfree
 ```
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
-1. Explicitly enable the OpenH264 repository
-```
-sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
-```
-1. Install the required package to verify the keys
-```
-sudo dnf install distribution-gpg-keys
-```
-1. Import the keys
-```
-sudo rpmkeys --import /usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-free-fedora-$(rpm -E %fedora)
-```
-1. Install and verify the keys
-```
-sudo dnf --setopt=localpkg_gpgcheck=1 install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-```
-1. Add AppStream metadata
-```
-sudo dnf update @core
-```
+Then, reboot.
 
 {: .important }
 > Currently (2024), the correct key fingerprints are as follows: \
@@ -58,4 +39,5 @@ These instructions do not install the tainted repos. The `free-tainted` reposito
 ##### References:
 [RPMFusion - Configuration](https://rpmfusion.org/Configuration)\
 [RPMFusion - Keys](https://rpmfusion.org/keys)\
-[RPMFusion - FAQ](https://rpmfusion.org/FAQ)
+[RPMFusion - FAQ](https://rpmfusion.org/FAQ)\
+[RPMFUsion - OSTree](https://rpmfusion.org/Howto/OSTree)
