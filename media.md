@@ -13,12 +13,11 @@ Fedora ships a version of FFmpeg with support for only free codecs, and allows a
 
 1. Install full version of FFmpeg
 ```
-sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+rpm-ostree override remove fdk-aac-free libavcodec-free libavdevice-free libavfilter-free libavformat-free libavutil-free libswresample-free libswscale-free ffmpeg-free --install ffmpeg
 ```
 2. For full codec support, run the following two commands
 ```
-sudo dnf up @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-sudo dnf up @sound-and-video
+rpm-ostree install gstreamer1-plugin-libav gstreamer1-plugins-bad-free-extras gstreamer1-plugins-bad-freeworld gstreamer1-plugins-ugly gstreamer1-vaapi --allow-inactive
 ```
 
 ## Hardware acceleration
@@ -32,7 +31,7 @@ On Linux, there are two main hardware acceleration APIs. [VAAPI](https://en.wiki
 <summary>GMA 4500 up to Broadwell processors</summary>
 Use `libva-intel-driver` (FOSS)
 ```
-sudo dnf in libva-intel-driver
+rpm-ostree install libva-intel-driver
 ```
 </details>
 <details markdown=1>
@@ -42,25 +41,25 @@ You can use either `intel-media-driver` (nonfree) or `libva-intel-driver` (FOSS)
 {: .note }
 You can try both, but `intel-media-driver` probably works better, but I have no way of verifying that statement.
 ```
-sudo dnf in intel-media-driver
+rpm-ostree install intel-media-driver
 ```
 or
 ```
-sudo dnf in libva-intel-driver
+rpm-ostree install libva-intel-driver
 ```
 </details>
 <details markdown=1>
 <summary>Coffee Lake processors and later, including Intel Arc GPUs</summary>
 Use `intel-media-driver` (nonfree)
 ```
-sudo dnf in intel-media-driver
+rpm-ostree install intel-media-driver
 ```
 </details>
 
 {: .note }
 > Intel does not support VDPAU, but you can get minimal VDPAU support (OpenGL and H.264) by installing `libvdpau-va-gl`. VAAPI should still be used whenever possible.
 > ```
-sudo dnf in libvdpau-va-gl
+rpm-ostree install libvdpau-va-gl
 ```
 </details>
 <details markdown=1>
@@ -71,7 +70,7 @@ VAAPI is supported on Radeon R600 and later. VDPAU is supported on Radeon HD 200
 
 The default VAAPI and VDPAU drivers installed do not support proprietary codecs. To add support, run the following command
 ```
-sudo dnf install mesa-va-drivers-freeworld mesa-va-drivers-freeworld.i686 
+rpm-ostree install mesa-va-drivers-freeworld 
 ```
 {: .note }
 To use AMF, you need to use the AMDGPU PRO stack. This is not recommended for most users.
@@ -80,35 +79,17 @@ To use AMF, you need to use the AMDGPU PRO stack. This is not recommended for mo
 <summary>NVIDIA</summary>
 With the NVIDIA drivers [installed](/nvidia), VDPAU, NVENC, and NVDEC are already set up. For VAAPI support, run:
 ```
-sudo dnf in libva-nvidia-driver.{i686,x86_64}
+rpm-ostree install libva-nvidia-driver
 ```
 
 {: .note }
 VDPAU or NVENC/NVDEC should be used whenever possible
 </details>
 
-## Playing DVDs
-
-{: .note }
-These instructions only apply to encrypted DVDs (i.e. movies you'd buy at the store). Your own burned DVDs aren't encrypted, and can play just like any external media device.
-
-Due to legal restrictions, libdvdcss isn't installed by default. However, if you want to use your computer to play encrypted DVDs, it is required.
-
-{: .important }
-> Read the following legal notice[^vlclegal] from VideoLAN before continuing: 
-> > libdvdcss is a library that can find and guess keys from a DVD in order to decrypt it.
-> > This method is **authorized** by a French law decision [CE 10e et 9e sous­sect., 16 juillet 2008, n° 301843](https://www.legifrance.gouv.fr/ceta/id/CETATEXT000019216315/) on interoperability.
-> > 
-> > **NB:** In the USA, you should check out [the US Copyright Office decision](https://www.copyright.gov/1201/) that allows circumvention in some cases.
-> > VideoLAN is **NOT** a US-based organization and is therefore **outside US jurisdiction**. 
-
-To install:
-```
-sudo dnf in rpmfusion-free-release-tainted && sudo dnf in libdvdcss
-```
 ### References:\
 [RPMFusion - Multimedia How-to](https://rpmfusion.org/Howto/Multimedia)\
-[ArchWiki - Hardware video acceleration](https://wiki.archlinux.org/title/Hardware_video_acceleration)
+[ArchWiki - Hardware video acceleration](https://wiki.archlinux.org/title/Hardware_video_acceleration)\
+[RPMFusion - OSTree How-to](https://rpmfusion.org/Howto/OSTree)
 
 [^ffmpeg]: See [here](https://rpmfusion.org/Howto/Multimedia).
 [^vlclegal]: See [here](https://www.videolan.org/legal.html).
