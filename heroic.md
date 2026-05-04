@@ -4,16 +4,9 @@ parent: Installing Common Software
 layout: default
 ---
 # Installing Heroic Games Launcher
-Heroic Games Launcher is an alternative client for the Epic Games Store, GOG.com, and Amazon Prime Gaming.\
-It's available as a native RPM package and a Flatpak.
-# Native package
-1. Enable [the Copr repo](https://copr.fedorainfracloud.org/coprs/atim/heroic-games-launcher/). 
+Heroic Games Launcher is an alternative client for the Epic Games Store, GOG.com, and Amazon Prime Gaming.
+
+You can install it by running
 ```
-sudo dnf copr enable atim/heroic-games-launcher
+flatpak install heroicgameslauncher
 ```
-1. Install the launcher
-```
-sudo dnf in heroic-games-launcher-bin
-```
-# Flatpak
-Add flathub instructions eventually.
