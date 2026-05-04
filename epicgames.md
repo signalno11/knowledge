@@ -7,3 +7,8 @@ layout: default
 The official Epic Games launcher is not available on Linux.
 
 - [Heroic Games Launcher]({% link heroic.md %}) is an unofficial game launcher and manager for the Epic Games Store, GOG.com, and Amazon Prime Gaming.
+
+You can install it by running
+```
+flatpak install heroicgameslauncher
+```
