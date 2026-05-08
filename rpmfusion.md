@@ -20,22 +20,6 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 ```
 sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
 ```
-1. Install the required package to verify the keys
-```
-sudo dnf install distribution-gpg-keys
-```
-1. Import the keys
-```
-sudo rpmkeys --import /usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-free-fedora-$(rpm -E %fedora)
-```
-1. Install and verify the keys
-```
-sudo dnf --setopt=localpkg_gpgcheck=1 install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-```
-1. Add AppStream metadata
-```
-sudo dnf update @core
-```
 
 {: .important }
 > Currently (2024), the correct key fingerprints are as follows: \
