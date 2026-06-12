@@ -21,7 +21,7 @@ mokutil --sb-state
 ```
 If Secure Boot is enabled, you must follow the steps [here]({% link nvidia_secboot.md %}) before proceeding.
 
-## Modern NVIDIA:
+## Modern NVIDIA (GTX 16/20 and later):
 First, update your system, `sudo dnf up`, and reboot.
 
 Install the NVIDIA drivers and CUDA/NV(ENC/DEC) support.
@@ -33,12 +33,10 @@ sudo dnf in akmod-nvidia xorg-x11-drv-nvidia-cuda
 {: .important }
 Wait for the kmod to be built. This can take up to 5 minutes.
 
-{: .important }
-> On Turing (GTX 16/20) and later, NVIDIA now recommends you use the open source drivers. If this is you, enable the open source drivers by running
-> ```
-sudo sh -c 'echo "%_with_kmod_nvidia_open 1" > /etc/rpm/macros.nvidia-kmod' && sudo akmods --kernels $(uname -r) --rebuild
+## GTX 10
 ```
-> and then continue with the instructions below.
+sudo dnf in akmod-nvidia-580xx xorg-x11-drv-nvidia-cuda-580xx
+```
 
 Reboot your system, and check that is it installed. That is, `modinfo -F version nvidia` should not ERROR.
 ## Legacy NVIDIA:
