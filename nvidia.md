@@ -33,7 +33,7 @@ sudo dnf in akmod-nvidia xorg-x11-drv-nvidia-cuda
 {: .important }
 Wait for the kmod to be built. This can take up to 5 minutes.
 
-## GTX 10
+## GTX 9/10
 ```
 sudo dnf in akmod-nvidia-580xx xorg-x11-drv-nvidia-cuda-580xx
 ```
